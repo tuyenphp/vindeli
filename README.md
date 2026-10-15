@@ -1,6 +1,6 @@
 # OpenDeli
 
-UI đặt món online tiếng Việt, phong cách hiện đại với tông cam ấm. Xây bằng JavaScript, CSS và Vite; không cần tài khoản, API key hoặc cơ sở dữ liệu.
+UI đặt món online tiếng Việt, phong cách hiện đại với tông cam ấm. Xây bằng JavaScript, Tailwind CSS 4 và Vite; không cần tài khoản, API key hoặc cơ sở dữ liệu.
 
 ## Chạy trên máy
 
@@ -28,6 +28,7 @@ Kiểm tra trình duyệt dùng Playwright và Chromium tại `/usr/bin/chromium
 - Mã HELLOOPEN giảm 20.000đ cho đơn từ 100.000đ.
 - Phí giao hàng 15.000đ; miễn phí cho đơn từ 200.000đ.
 - Biểu mẫu đặt đơn và màn hình xác nhận mô phỏng.
-- Bố cục điện thoại và máy tính, dùng minh họa emoji và CSS không phụ thuộc ảnh ngoài.
+- Bố cục điện thoại và máy tính, dùng ảnh món ăn tạo riêng lưu trong dự án, không phụ thuộc dịch vụ ảnh ngoài.
+- Điều hướng dưới, giỏ hàng dạng bảng trượt, món yêu thích và địa chỉ giao hàng lưu trên trình duyệt.
 
 Đây là UI demo. Không gửi đơn đến nhà hàng, không thanh toán hay gửi thông tin khách hàng lên máy chủ. Có thể đưa thư mục `dist` sau khi build lên dịch vụ hosting web tĩnh.

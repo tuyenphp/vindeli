@@ -24,3 +24,9 @@ test('mobile fits and quantity removal works',async({page})=>{
  await page.getByLabel('Thêm Burger bò phô mai',{exact:true}).click();await page.locator('#open-cart').click();await page.getByLabel('Tăng Burger bò phô mai',{exact:true}).click();await expect(page.locator('.quantity span')).toHaveText('2');
  await page.getByLabel('Giảm Burger bò phô mai',{exact:true}).click();await page.getByLabel('Giảm Burger bò phô mai',{exact:true}).click();await expect(page.getByText('Giỏ hàng đang chờ món ngon')).toBeVisible();
 });
+test('native navigation saves favorites and delivery address',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto('http://127.0.0.1:5173');
+ await page.getByLabel('Yêu thích Burger bò phô mai',{exact:true}).click();await page.locator('#nav-favorites').click();await expect(page.locator('.dish')).toHaveCount(1);await expect(page.locator('.dish h3')).toHaveText('Burger bò phô mai');await page.reload();await page.locator('#nav-favorites').click();await expect(page.locator('.dish')).toHaveCount(1);
+ await page.locator('#location').click();await page.getByLabel('Địa chỉ nhận món').fill('25 Nguyễn Huệ, Quận 1');await page.getByRole('button',{name:'Lưu địa chỉ'}).click();await expect(page.locator('#location-text')).toHaveText('25 Nguyễn Huệ, Quận 1');
+ await page.getByLabel('Thêm Burger bò phô mai',{exact:true}).click();await expect(page.locator('#cart-float')).toBeVisible();await page.locator('#cart-float').click();await expect(page.getByLabel('Địa chỉ giao hàng',{exact:true})).toHaveValue('25 Nguyễn Huệ, Quận 1');
+});
